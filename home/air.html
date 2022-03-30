@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/home/sarvar1/golang/day35/home/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/home/sarvar1/golang/day35/home/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/home/sarvar1/golang/day35/home/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Airplane</title>
+    <style type="text/css">
+
+body {
+  background-image: url('https://wallpaperaccess.com/full/254381.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+    </style>
+</head>
+<body>
+    <h1 style="margin-left:45%;">Airplane</h1>
+       <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Reference</th>
+                    <th>Terminal</th>
+                    <th>Flight</th>
+                    <th>Flytime</th>
+                    <th>Togo</th>
+                    <th>Gate</th>
+                    <th>Landtime</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range . }}
+                    <tr class="active-row">
+                        <td>{{ .Airplane_id }}</td>
+                        <td>{{ .Terminal }}</td>
+                        <td>{{ .Flight }}</td>
+                        <td>{{ .Flytime }}</td>
+                        <td>{{ .Togo }}</td>
+                        <td>{{ .Gate }}</td>
+                        <td>{{ .Landtime }}</td>
+                        <td>{{ .Remark }}</td>
+                    </tr>
+                {{ end }}
+            </tbody>
+       </table>
+</body>
+</html>
+
+
